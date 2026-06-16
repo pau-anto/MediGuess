@@ -1,0 +1,50 @@
+# ---- Data (never commit raw datasets) ----
+data/raw/
+data/*.csv
+data/*.parquet
+*.zip
+*.tar.gz
+
+# ---- Models / artifacts ----
+*.pkl
+*.joblib
+*.h5
+*.onnx
+models/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---- Node / frontend ----
+node_modules/
+dist/
+build/
+.next/
+*.log
+
+# ---- Secrets & env ----
+.env
+.env.*
+*.pem
+aws-credentials*
+.aws/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- Terraform / infra ----
+.terraform/
+*.tfstate
+*.tfstate.*
