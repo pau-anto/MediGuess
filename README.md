@@ -1,7 +1,5 @@
 # 🩺 MediGuess
 
-> A serious game where you diagnose clinical cases — and learn to reason like the model that's playing alongside you.
-
 **MediGuess** is an educational serious game built for the 4IABD annual project. The player examines a clinical case (symptoms, patient profile, vital signs) and proposes a diagnosis. A machine learning model predicts the disease in parallel, and an **explainability layer (SHAP)** reveals *why* it decided that way. The game lives in the gap between the player's reasoning and the model's.
 
 > ⚠️ **MediGuess is a learning tool, not a medical device.** It must never be used for real self-diagnosis or clinical decisions.
@@ -28,10 +26,9 @@
 
 The pedagogy is the point: instead of guessing an answer, the player learns to weigh evidence the way the model does. After each case, MediGuess shows the **top 3 factors** that drove the model's prediction and contrasts them with the player's own reasoning.
 
-Three pillars guide the project:
+Two pillars guide the project:
 
 - **Pedagogical** — teach clinical reasoning, not trivia.
-- **Community** — leaderboards, cooperative mode, community-submitted cases.
 - **Honest** — an explicit learning tool, never a diagnostic authority.
 
 ## Features
@@ -40,11 +37,8 @@ Three pillars guide the project:
 - Play through a clinical case: review information, propose a diagnosis.
 - Scoring based on the reasoning process, not just the final answer.
 - Template-based pedagogical feedback derived from the model's top 3 factors.
-- Community leaderboard.
 
 ### Stretch (cancellable if behind schedule)
-- Cooperative multiplayer mode (roles: ER physician, radiologist, etc.).
-- Community-submitted cases.
 - "Real cases" hard mode powered by MIMIC-III.
 - Generative feedback via RAG + LLM.
 - Severity estimation.
@@ -65,7 +59,7 @@ Deployed on AWS:
 |--------------------------|--------------------------------------|
 | Frontend hosting         | S3 + CloudFront                      |
 | API & inference          | API Gateway + Lambda                 |
-| Scores / leaderboard     | DynamoDB                             |
+| Scores / game state      | DynamoDB                             |
 | Dataset & model artifacts| S3                                   |
 | Deployment (stretch)     | Terraform / AWS CDK (full-serverless)|
 
@@ -148,7 +142,7 @@ Per the course requirements, the project enforces:
 | 1 | ML core (training, SHAP) | Month 1–2 |
 | 2 | Game loop & template feedback | Month 2–3 |
 | 3 | AWS deployment | Month 3–4 |
-| 4 | Community & stretch features | Month 4–5 |
+| 4 | Stretch features | Month 4–5 |
 | 5 | Report, docs, defense | Month 5–6 |
 
 See the project tracking sheet for the detailed task breakdown.
@@ -157,10 +151,10 @@ See the project tracking sheet for the detailed task breakdown.
 
 | Name | Role | GitHub |
 |------|------|--------|
-| _TBD_ | _TBD_ | _@_ |
-| _TBD_ | _TBD_ | _@_ |
-| _TBD_ | _TBD_ | _@_ |
-| _TBD_ | _TBD_ | _@_ |
+| Alia MEZOUAR | _TBD_ | @Amlezia |
+| Eliette AKOUE | _TBD_ | @Eliettetheegeek |
+| Pauline ANTOGNELLI | _TBD_ | @pau-anto |
+| Tinhinane SALEMKOUR | _TBD_ | @Tinhinane Salemkour |
 
 4IABD — Annual project 2026.
 
