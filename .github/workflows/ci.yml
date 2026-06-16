@@ -1,0 +1,18 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install tools
+        run: pip install black pylint
+      - name: Check formatting (Black)
+        run: black --check .
+      - name: Lint (Pylint)
+        run: pylint ml backend || true   # remove '|| true' once code stabilizes
