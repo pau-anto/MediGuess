@@ -8,6 +8,7 @@ Raw datasets are **not** committed to this repository (see `.gitignore`).
 1. Download from Kaggle: 
 - <https://www.kaggle.com/datasets/s3programmer/disease-diagnosis-dataset>
 - <https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset/data>
+- <https://www.kaggle.com/datasets/kaushil268/disease-prediction-using-machine-learning>
 2. Place the files in `data/raw/`
 
 ### Advanced — MIMIC-III (stretch)
