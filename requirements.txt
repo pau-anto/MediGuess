@@ -1,1 +1,10 @@
-requirements: scikit-learn, xgboost, shap, pandas, numpy
+pandas
+numpy
+scikit-learn
+xgboost
+shap
+joblib
+matplotlib
+jupyter
+black
+pylint
