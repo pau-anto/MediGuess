@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediGuess</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stage" id="stage">
+
+    <!-- ===== Décor : cabinet médical (SVG dessiné à la main) ===== -->
+    <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <!-- mur + plinthe + sol -->
+      <rect width="1600" height="640" fill="#9ed3c9"/>
+      <rect y="540" width="1600" height="100" fill="#86c2b6"/>
+      <rect y="640" width="1600" height="260" fill="#e9c99a"/>
+      <!-- fenêtre -->
+      <rect x="170" y="110" width="340" height="270" rx="16" fill="#fff"/>
+      <rect x="190" y="130" width="300" height="230" rx="8" fill="#cfefff"/>
+      <ellipse cx="300" cy="210" rx="60" ry="26" fill="#fff"/>
+      <ellipse cx="345" cy="195" rx="40" ry="22" fill="#fff"/>
+      <rect x="335" y="130" width="12" height="230" fill="#fff"/>
+      <rect x="190" y="240" width="300" height="12" fill="#fff"/>
+      <!-- tableau d'acuité visuelle -->
+      <rect x="1170" y="120" width="210" height="300" rx="10" fill="#fff"/>
+      <g fill="#2b3a44" font-family="Fredoka, sans-serif" font-weight="700" text-anchor="middle">
+        <text x="1275" y="200" font-size="70">E</text>
+        <text x="1275" y="265" font-size="44">F P</text>
+        <text x="1275" y="318" font-size="32">T O Z</text>
+        <text x="1275" y="360" font-size="24">L P E D</text>
+        <text x="1275" y="394" font-size="18">P E C F D</text>
+      </g>
+      <!-- plante -->
+      <path d="M95 560 q-60 -120 10 -200 q20 90 0 200z" fill="#4f9d69"/>
+      <path d="M110 560 q70 -110 0 -230 q-30 110 0 230z" fill="#62b57c"/>
+      <path d="M60 550 h100 l-12 90 h-76z" fill="#e2775f"/>
+
+      <!-- patient (dessiné par app.js) -->
+      <g id="patient" transform="translate(800 0)"></g>
+
+      <!-- bureau au premier plan -->
+      <rect y="720" width="1600" height="180" fill="#8c6239"/>
+      <rect y="706" width="1600" height="26" rx="6" fill="#a8744a"/>
+      <!-- pot à crayons -->
+      <rect x="1300" y="640" width="60" height="72" rx="8" fill="#5b8def"/>
+      <rect x="1312" y="605" width="8" height="45" rx="3" fill="#f2a541"/>
+      <rect x="1328" y="596" width="8" height="54" rx="3" fill="#e26d5a"/>
+      <rect x="1344" y="610" width="8" height="40" rx="3" fill="#7cc68d"/>
+    </svg>
+
+    <!-- ===== HUD ===== -->
+    <header class="hud">
+      <h1 class="logo">MediGuess</h1>
+      <div class="hud-stats">
+        <span class="lives" id="lives" aria-label="Vies"></span>
+        <span class="score">Score <strong id="score">0</strong></span>
+      </div>
+    </header>
+
+    <!-- ===== Dossier (presse-papiers) ===== -->
+    <aside class="clipboard" id="clipboard" hidden>
+      <div class="clip" aria-hidden="true"></div>
+      <h2 id="patient-name">Patient</h2>
+      <ul id="symptoms"></ul>
+      <p class="stamp" id="stamp" hidden></p>
+    </aside>
+
+    <!-- ===== Boîte de dialogue ===== -->
+    <section class="dialogue" id="dialogue" aria-live="polite">
+      <p class="speaker" id="speaker"></p>
+      <div class="dialogue-body" id="dialogue-body"></div>
+    </section>
+
+  </div>
+
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
