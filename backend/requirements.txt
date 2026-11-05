@@ -1,0 +1,7 @@
+# Dépendances du backend SEUL (image Docker Azure).
+# Pas de scikit-learn / shap / pandas : le ML est pré-calculé dans
+# backend/data/case_bank.json par ml/src/build_case_bank.py.
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+azure-data-tables==12.6.0
+pyjwt==2.10.1

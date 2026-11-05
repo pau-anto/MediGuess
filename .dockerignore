@@ -1,0 +1,5 @@
+# Liste blanche : sans ça, Docker enverrait models/ et data/ (plusieurs Go)
+*
+!backend/
+backend/tests/
+**/__pycache__

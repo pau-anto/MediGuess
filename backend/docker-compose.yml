@@ -1,0 +1,22 @@
+# Dev local "comme sur Azure" : API + Azurite (émulateur Azure Table Storage).
+# Depuis la racine du repo :
+#   docker compose -f backend/docker-compose.yml up --build
+# API sur http://127.0.0.1:8080 (le 8000 est pris par DynamoDB Local).
+services:
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    command: azurite-table --tableHost 0.0.0.0
+    ports:
+      - "10002:10002"
+
+  api:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      # Compte de développement public d'Azurite (pas un secret)
+      AZURE_STORAGE_CONNECTION_STRING: "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;TableEndpoint=http://azurite:10002/devstoreaccount1;"
+    depends_on:
+      - azurite
